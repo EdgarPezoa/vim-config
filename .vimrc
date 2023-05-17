@@ -14,6 +14,9 @@ set incsearch
 set scrolloff=8
 set guicursor=
 
+"for Windows and macOs use set clipboard=unnamed
+set clipboard=unnamedplus
+
 
 if filereadable("/home/eddy/.vimrcplug")
     source /home/eddy/.vimrcplug
