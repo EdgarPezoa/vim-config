@@ -1,3 +1,4 @@
-let mapleader = " "
+let mapleader = ","
 
-map <Leader>nt :NERDTreeFind<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>

@@ -1,4 +1,8 @@
 call plug#begin()
     Plug 'dense-analysis/ale'
     Plug 'preservim/nerdtree'
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'mattn/emmet-vim'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-commentary'
 call plug#end()
