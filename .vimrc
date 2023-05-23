@@ -14,8 +14,6 @@ set noswapfile
 set incsearch
 set scrolloff=8
 set guicursor=
-set cursorline
-set cursorcolumn
 set nocompatible
 set nobackup
 set incsearch
@@ -26,23 +24,29 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set clipboard=unnamedplus
+set mouse=v
 filetype on
 filetype plugin on
 filetype indent on
 
 "Extends plugins
-if filereadable("/home/eddy/.vimrcplug")
-    source /home/eddy/.vimrcplug
+if filereadable("/Users/edgarpezoasoto/.vimrcplug")
+    source /Users/edgarpezoasoto/.vimrcplug
 endif
 
 "Extends mapkeys
-if filereadable("/home/eddy/.vimrcmap")
-    source /home/eddy/.vimrcmap
+if filereadable("/Users/edgarpezoasoto/.vimrcmap")
+    source /Users/edgarpezoasoto/.vimrcmap
 endif
 
-"Set ayu theme
-set termguicolors
-let ayucolor="light"
-let ayucolor="mirage"
-let ayucolor="dark"
-colorscheme ayu
+colorscheme onedark
+set cursorline
+set cursorcolumn
+
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    highlight CursorLine ctermbg=8
+    highlight CursorColumn ctermbg=8 
+  endif
+endif

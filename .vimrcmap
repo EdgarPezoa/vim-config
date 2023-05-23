@@ -1,5 +1,6 @@
 let mapleader = ","
 
+"Plugings
 nnoremap <space> :
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -21,8 +22,14 @@ map <C-s> <esc>:w<CR>
 nnoremap <C-r> :source $MYVIMRC<CR>
 
 "Copy, Cut, Paste and Selection
-vnoremap <C-c> y
 nnoremap <C-c> yy
+vnoremap <C-c> y
 inoremap <C-c> <esc>yyli
 noremap <C-v> <esc>P
 noremap <C-a> <esc>ggVG<CR>
+
+"Comentary
+nmap <S-o> gcc
+imap <S-o> <esc>gcc
+vmap <S-o> gc
+map <C-o> gcap
