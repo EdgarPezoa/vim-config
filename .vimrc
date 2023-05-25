@@ -1,6 +1,7 @@
 syntax on
 set nu
 set relativenumber
+set showcmd
 set encoding=utf-8
 set smarttab
 set smartindent

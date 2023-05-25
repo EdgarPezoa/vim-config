@@ -22,6 +22,7 @@ call plug#begin()
 
 call plug#end()
 
+    "JS TS
     autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
     autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
@@ -33,5 +34,9 @@ call plug#end()
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
     
-    
-   
+    "GITGUTTER
+    function! GitStatus()
+        let [a,m,r] = GitGutterGetHunkSummary()
+        return printf('+%d ~%d -%d', a, m, r)
+    endfunction
+     set statusline+=%{GitStatus()}  
