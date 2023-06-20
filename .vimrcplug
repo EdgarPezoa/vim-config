@@ -11,6 +11,9 @@ call plug#begin()
     Plug 'scrooloose/syntastic'
     Plug 'vim-airline/vim-airline'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
     "Javascript/Typescript
     Plug 'pangloss/vim-javascript'

@@ -24,20 +24,19 @@ set history=1000
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-set clipboard=unnamedplus
 set mouse=v
 filetype on
 filetype plugin on
 filetype indent on
 
 "Extends plugins
-if filereadable("/Users/edgarpezoasoto/.vimrcplug")
-    source /Users/edgarpezoasoto/.vimrcplug
+if filereadable("C:/Users/edgar")
+    source C:/Users/edgar
 endif
 
 "Extends mapkeys
-if filereadable("/Users/edgarpezoasoto/.vimrcmap")
-    source /Users/edgarpezoasoto/.vimrcmap
+if filereadable("C:/Users/edgar")
+    source C:/Users/edgar 
 endif
 
 colorscheme onedark
@@ -50,4 +49,10 @@ if has("unix")
     highlight CursorLine ctermbg=8
     highlight CursorColumn ctermbg=8 
   endif
+endif
+
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
 endif
