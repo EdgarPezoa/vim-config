@@ -6,11 +6,8 @@ nnoremap <space> :
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 map <leader>p :Prettier<CR>
-
-"Git
 map <leader>gf :GitGutterFold<CR>
 map <leader>gh :GitGutterLineHighlightsToggle<CR>
-map <leader>gd :GitGutterDiffOrig<CR>
 
 "Files
 map <C-p> :Files<CR>
@@ -32,14 +29,20 @@ map <C-s> <esc>:w<CR>
 nnoremap <C-r> :source $MYVIMRC<CR>
 
 "Copy, Cut, Paste and Selection
-nmap <C-c> yy
-vmap <C-c> y
-imap <C-c> <esc>yyli
-noremap <C-v> <esc>P
-noremap <C-a> <esc>ggVG<CR>
+noremap <C-v> <ESC>"*p
+vnoremap <C-c> "*y
+nnoremap <C-c> "*yy
 
 "Comentary
 nmap <C-o> gcc
 imap <C-o> <esc>gcc
 vmap <C-o> gc
 map <C-o> gcap
+
+"Autocompletion
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()       
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

@@ -16,6 +16,9 @@ set incsearch
 set scrolloff=8
 set guicursor=
 set nocompatible
+set nowritebackup
+set updatetime=300
+set signcolumn=yes
 set nobackup
 set incsearch
 set showmatch
@@ -30,13 +33,13 @@ filetype plugin on
 filetype indent on
 
 "Extends plugins
-if filereadable("C:/Users/edgar")
-    source C:/Users/edgar
+if filereadable("C:/Users/edgar/.vimrcplug")
+    source C:/Users/edgar/.vimrcplug
 endif
 
 "Extends mapkeys
-if filereadable("C:/Users/edgar")
-    source C:/Users/edgar 
+if filereadable("C:/Users/edgar/.vimrcmap")
+    source C:/Users/edgar/.vimrcmap
 endif
 
 colorscheme onedark
@@ -49,10 +52,4 @@ if has("unix")
     highlight CursorLine ctermbg=8
     highlight CursorColumn ctermbg=8 
   endif
-endif
-
-if system('uname -s') == "Darwin\n"
-  set clipboard=unnamed "OSX
-else
-  set clipboard=unnamedplus "Linux
 endif
